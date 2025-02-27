@@ -15,7 +15,14 @@ def main_menu(context: ViewContext):
     while True:
         exit_instruction = "⟪ Hit Ctrl+C at any time to exit a menu ⟫"
         welcome_message = "Import your datasets to run analysis for likelihood of coordinated inauthentic behavior."
-        with terminal.nest(draw_box("CIB Mango Tree") + "\n" + exit_instruction + "\n\n" + welcome_message + "\n"):
+        with terminal.nest(
+            draw_box("CIB Mango Tree")
+            + "\n"
+            + exit_instruction
+            + "\n\n"
+            + welcome_message
+            + "\n"
+        ):
             action = prompts.list_input(
                 "What would you like to do?",
                 choices=[
