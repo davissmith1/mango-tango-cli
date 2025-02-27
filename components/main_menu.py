@@ -19,7 +19,7 @@ def main_menu(context: ViewContext):
                 "What would you like to do?",
                 choices=[
                     ("Import dataset", "new_project"),
-                    ("Load existing dataset", "load_project"),
+                    ("Load existing Project", "load_project"),
                     ("Exit", "exit"),
                 ],
             )
@@ -43,7 +43,7 @@ def main_menu(context: ViewContext):
 
         if action == "load_project":
             with terminal.nest(
-                draw_box("CIB Mango Tree: Load Dataset")
+                draw_box("CIB Mango Tree: Load Project")
                 + "\n"
                 + exit_instruction
                 + "\n"
