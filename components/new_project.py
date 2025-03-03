@@ -103,14 +103,14 @@ def importer_flow(
             if import_session_error:
                 print("Could not load a preview of the data.")
                 print(f"❌ Error:\n{indent_error(str(import_session_error))}")
-                print(f"Importing as {importer.name} with these options:")
+                print(f"Import options for this data:")
                 import_session.print_config()
                 print("")
             else:
-                print(f"Importing as {importer.name} with these options:")
+                print(f"Import options for this data:")
                 import_session.print_config()
                 print("")
-                print("The data has these columns:")
+                print("Your data has appears to have these columns:")
                 print("(Each column should be listed in its own line)")
                 for column in import_preview.columns:
                     print(f"  [{column}]")
@@ -129,7 +129,7 @@ def importer_flow(
                     else []
                 ),
                 *(
-                    [("Modify the import options", "modify")]
+                    [("Modify import options", "modify")]
                     if import_session
                     else [("Manually configure the import options", "manual")]
                 ),
